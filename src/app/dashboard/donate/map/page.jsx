@@ -1,10 +1,7 @@
 "use client";
-
 import dynamic from "next/dynamic";
 
-const MapLea = dynamic(() => import("@/components/MapLea"), {
-    ssr: false,
-});
+const MapLea = dynamic(() => import("@/components/MapLea.jsx"), { ssr: false });
 
 export default function MapPage() {
     return (
@@ -12,7 +9,6 @@ export default function MapPage() {
             <div className="p-4 text-lg font-semibold md:hidden">
                 Mapa de Recolha ♻️
             </div>
-
             <MapLea />
         </div>
     );

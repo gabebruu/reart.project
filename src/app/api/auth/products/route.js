@@ -1,38 +1,29 @@
-import { NextResponse } from "next/server";
+import { connectDB } from "@/models/connection";
+import Product from "@/models/Product";
 
-// Exemplo de produtos estáticos (você pode trocar por dados do banco)
-const products = [
-  {
-    _id: "1",
-    name: "Escultura Reciclada",
-    description: "Feita com metal reutilizado",
-    price: 120,
-    image: "https://via.placeholder.com/150",
-  },
-  {
-    _id: "2",
-    name: "Arte em Papelão",
-    description: "Peça artesanal com papelão reciclado",
-    price: 90,
-    image: "https://via.placeholder.com/150",
-  },
-  {
-    _id: "3",
-    name: "Quadro Sustentável",
-    description: "Tinta natural e moldura de madeira reaproveitada",
-    price: 200,
-    image: "https://via.placeholder.com/150",
-  },
-];
 
-// Rota GET /api/products
-export async function GET() {
-  try {
-    return NextResponse.json(products);
-  } catch (error) {
-    return NextResponse.json(
-      { message: "Erro ao buscar produtos", error: error.message },
-      { status: 500 }
-    );
-  }
+// Get - fetching all products 
+export async function GET() { 
+    try { 
+        await connectDB();
+        const products = await Product.find();
+        return Response.json(products, {status: 200});
+    } catch (error) {
+        console.error("GET /api/products error:", error);
+        return Response.json({ error: "Failed to fetch products"}, {status: 500});
+    }
+}
+
+// POST - Create a new Product
+export async function POST(req) {
+    try {
+        await connectDB();
+        const body = await req.json();
+
+        const newProduct = await Product.create(body);
+        return Response.json(newProduct, {status:201});
+    } catch (error) {
+        console.error("POST /api/products error:", error);
+        return Response.json({ error: "Failed to create product"}, { status: 500 });
+    }
 }

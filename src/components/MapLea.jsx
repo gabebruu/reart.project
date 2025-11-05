@@ -3,6 +3,7 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import { useEffect, useState } from "react";
+import "leaflet/dist/leaflet.css";
 
 // ==== Default center Porto 🇵🇹 ====
 const defaultCenter = [41.149956, -8.610242];
@@ -62,7 +63,7 @@ export default function MapLea() {
     }, []);
 
     return (
-        <div className="w-full h-dvh pb-20 relative">
+        <div className="relative w-full h-full min-h-[330px] rounded-lg overflow-hidden">
             <MapContainer
                 center={defaultCenter}
                 zoom={13}

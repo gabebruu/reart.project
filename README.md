@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+♻️ ReArt — Moda Circular e Arte Sustentável
 
-## Getting Started
+Dar nova vida ao que já não usas.
+Criar arte com propósito.
+Vestir o futuro. 🌿
 
-First, run the development server:
+ReArt é uma plataforma mobile-first que conecta pessoas que desejam doar roupa usada ao nosso artista residente — que transforma estes materiais em peças únicas de arte sustentável.
 
-```bash
+A aplicação permite que qualquer pessoa:
+
+✨ Doe roupa têxtil
+🎁 Receba descontos proporcionais à quantidade doada
+🛍️ Explore e compre peças exclusivas criadas a partir das doações
+📍 Consulte pontos de entrega e use geolocalização
+🔐 Faça login com Google ou email/password
+
+A ReArt existe para promover a economia circular, apoiar a criação artística local e reduzir o impacto têxtil no planeta.
+
+🚀 Funcionalidades Principais
+Categoria	Funcionalidade
+👤 Autenticação	Login via Google & Credenciais
+🧾 Doação	Sistema de registo de materiais doados com cálculo de desconto
+📍 Mapa	Pontos de entrega com geolocalização (Leaflet + OpenStreetMap)
+🛒 Loja	Catálogo de peças únicas criadas pelo artista
+💳 Carrinho	CRUD do carrinho (in progress)
+📱 UI/UX	Mobile-first, interface moderna e focada no utilizador
+🧠 Tecnologias Utilizadas
+Área	Tech
+Frontend	Next.js 14 (App Router), TailwindCSS, Next/Image, Lucide
+Backend	Next.js API Routes
+Autenticação	Next-Auth (Google + Credentials)
+Base de Dados	MongoDB Atlas + Mongoose
+Mapa	React-Leaflet + OpenStreetMap
+Deploy	Vercel
+🗂️ Estrutura do Projeto
+src/
+ ├─ app/
+ │   ├─ page.jsx            → Login
+ │   ├─ dashboard/
+ │   │   ├─ page.jsx        → Catálogo
+ │   │   ├─ layout.jsx      → Container mobile + Navbar
+ │   │   ├─ donate/
+ │   │   │   ├─ page.jsx    → Doar + Desconto + Mapa
+ │   │   ├─ cart/
+ │   │   │   └─ page.jsx
+ │   │   ├─ artist/
+ │   │   │   └─ page.jsx     → Sobre o artista
+ │   └─ api/
+ │       └─ (auth, produtos, carrinho...)
+ ├─ components/
+ │   ├─ ProductCard.jsx
+ │   ├─ BottomNav.jsx
+ │   ├─ MapLea.jsx
+ │   └─ DonationsCalculator.jsx
+ └─ database/
+     └─ models (User, Product, Donation...)
+
+👥 Equipa
+Nome	Função
+Miguel	Fullstack & Gestão do Projeto
+Mishal	Fullstack
+Bruna	Frontend & UI
+Rodolfo	Frontend
+Chris	Frontend & Design
+🌍 Missão Social & Ambiental
+
+A ReArt nasce com o compromisso de:
+
+Combater o desperdício têxtil
+
+Sensibilizar para a moda sustentável
+
+Apoiar produção artística local
+
+Criar uma comunidade que valoriza a reutilização
+
+Cada peça comprada e cada peça de roupa doada contribui para um ciclo mais humano e mais verde 🌱
+
+🧪 Como correr o projeto localmente
+1️⃣ Clonar o repositório
+git clone <repo>
+cd reart
+
+2️⃣ Instalar dependências
+npm install
+
+3️⃣ Configurar variáveis de ambiente
+
+Criar .env.local e inserir credenciais Google + MongoDB.
+
+4️⃣ Iniciar
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🌐 Deploy
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+🔗 Vercel Live Preview: (link aqui)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🎤 Pitch rápido
 
-## Learn More
+A ReArt transforma doações têxteis em arte sustentável.
+Criamos impacto social, ambiental e cultural — com moda circular como motor e tecnologia como ponte entre comunidade e artista.
 
-To learn more about Next.js, take a look at the following resources:
+🏁 Conclusão
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Este é mais do que um marketplace — é um movimento criativo para um planeta mais consciente.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ReArt — onde a roupa renasce e a arte floresce.

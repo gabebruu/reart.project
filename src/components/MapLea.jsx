@@ -31,7 +31,7 @@ const recyclingPoints = [
     { id: 4, name: "Ponto Têxtil Gaia", position: [41.124970, -8.612960] },
 ];
 
-// ==== Botón de centrar ====
+// ==== Center button component ====
 function RecenterButton({ userLocation }) {
     const map = useMap();
 
@@ -75,12 +75,12 @@ export default function MapLea() {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
 
-                {/* Usuario */}
+                {/* User */}
                 <Marker position={userLocation} icon={userIcon}>
                     <Popup>📍 Estás aqui</Popup>
                 </Marker>
 
-                {/* Puntos de reciclaje */}
+                {/* Recycling points */}
                 {recyclingPoints.map((p) => (
                     <Marker key={p.id} position={p.position} icon={recycleIcon}>
                         <Popup>♻️ {p.name}</Popup>

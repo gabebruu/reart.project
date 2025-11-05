@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { LogIn, Mail, Lock } from "lucide-react";
 import Image from "next/image";
+import ProductsList from "./components/ProductsList";
 
 export default function LoginPage() {
   const { data: session, status } = useSession();
@@ -131,3 +132,39 @@ export default function LoginPage() {
     </div>
   );
 }
+
+// --- ESTILOS ---
+const smallButton = {
+  background: "none",
+  border: "1px solid #ccc",
+  borderRadius: "20px",
+  padding: "6px 14px",
+  fontSize: "14px",
+  fontWeight: "500",
+  cursor: "pointer",
+};
+
+const blackButton = {
+  backgroundColor: "#000",
+  color: "#fff",
+  border: "none",
+  borderRadius: "20px",
+  padding: "6px 14px",
+  fontSize: "14px",
+  fontWeight: "500",
+  cursor: "pointer",
+};
+
+const navIcon = {
+  background: "none",
+  border: "none",
+  fontSize: "20px",
+  cursor: "pointer",
+  color: "#999",
+  transition: "color 0.3s",
+};
+
+const activeIcon = {
+  ...navIcon,
+  color: "#222",
+};

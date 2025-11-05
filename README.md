@@ -1,107 +1,146 @@
-♻️ ReArt — Moda Circular e Arte Sustentável
+# ♻️ ReArt — Moda Circular e Arte Sustentável
 
-Dar nova vida ao que já não usas.
-Criar arte com propósito.
-Vestir o futuro. 🌿
+> Dar nova vida ao que já não usas.  
+> Criar arte com propósito.  
+> Vestir o futuro. 🌿
 
-ReArt é uma plataforma mobile-first que conecta pessoas que desejam doar roupa usada ao nosso artista residente — que transforma estes materiais em peças únicas de arte sustentável.
+ReArt é uma plataforma mobile-first que conecta pessoas que desejam doar roupa usada ao nosso artista residente — que transforma estes materiais em **peças únicas de arte sustentável**.
 
-A aplicação permite que qualquer pessoa:
+A aplicação permite:
 
-✨ Doe roupa têxtil
-🎁 Receba descontos proporcionais à quantidade doada
-🛍️ Explore e compre peças exclusivas criadas a partir das doações
-📍 Consulte pontos de entrega e use geolocalização
-🔐 Faça login com Google ou email/password
+✨ Doar roupa têxtil  
+🎁 Receber descontos pela quantidade doada  
+🛍️ Comprar peças únicas criadas pelo artista  
+📍 Ver pontos de entrega com geolocalização  
+🔐 Login com Google ou email/password  
 
-A ReArt existe para promover a economia circular, apoiar a criação artística local e reduzir o impacto têxtil no planeta.
+A ReArt existe para promover a **economia circular**, apoiar a **criação artística local** e reduzir o **desperdício têxtil no planeta**.
 
-🚀 Funcionalidades Principais
-Categoria	Funcionalidade
-👤 Autenticação	Login via Google & Credenciais
-🧾 Doação	Sistema de registo de materiais doados com cálculo de desconto
-📍 Mapa	Pontos de entrega com geolocalização (Leaflet + OpenStreetMap)
-🛒 Loja	Catálogo de peças únicas criadas pelo artista
-💳 Carrinho	CRUD do carrinho (in progress)
-📱 UI/UX	Mobile-first, interface moderna e focada no utilizador
-🧠 Tecnologias Utilizadas
-Área	Tech
-Frontend	Next.js 14 (App Router), TailwindCSS, Next/Image, Lucide
-Backend	Next.js API Routes
-Autenticação	Next-Auth (Google + Credentials)
-Base de Dados	MongoDB Atlas + Mongoose
-Mapa	React-Leaflet + OpenStreetMap
-Deploy	Vercel
-🗂️ Estrutura do Projeto
+---
+
+## 🚀 Funcionalidades
+
+| Categoria | Funcionalidade |
+|---|---|
+👤 Autenticação | Google Auth + Credentials (Next-Auth) |
+🧾 Doações | Registo de doações + cálculo automático de desconto |
+🗺️ Mapa | Pontos de entrega + geolocalização com Leaflet |
+🛒 Loja | Peças sustentáveis criadas pelo artista |
+🧺 Carrinho | CRUD (em desenvolvimento) |
+📱 UX | Interface totalmente mobile-first |
+
+---
+
+## 🧠 Tech Stack
+
+| Área | Tecnologia |
+|---|---|
+Frontend | Next.js 14 + TailwindCSS |
+Backend | Next.js API Routes |
+BD | MongoDB Atlas + Mongoose |
+Auth | Next-Auth (Google & Credentials) |
+Mapas | React-Leaflet + OpenStreetMap |
+Deploy | Vercel |
+
+---
+
+## 🗂️ Estrutura do Projeto
+
 src/
- ├─ app/
- │   ├─ page.jsx            → Login
- │   ├─ dashboard/
- │   │   ├─ page.jsx        → Catálogo
- │   │   ├─ layout.jsx      → Container mobile + Navbar
- │   │   ├─ donate/
- │   │   │   ├─ page.jsx    → Doar + Desconto + Mapa
- │   │   ├─ cart/
- │   │   │   └─ page.jsx
- │   │   ├─ artist/
- │   │   │   └─ page.jsx     → Sobre o artista
- │   └─ api/
- │       └─ (auth, produtos, carrinho...)
- ├─ components/
- │   ├─ ProductCard.jsx
- │   ├─ BottomNav.jsx
- │   ├─ MapLea.jsx
- │   └─ DonationsCalculator.jsx
- └─ database/
-     └─ models (User, Product, Donation...)
 
-👥 Equipa
-Nome	Função
-Miguel	Fullstack & Gestão do Projeto
-Mishal	Fullstack
-Bruna	Frontend & UI
-Rodolfo	Frontend
-Chris	Frontend & Design
-🌍 Missão Social & Ambiental
+├─ app/
 
-A ReArt nasce com o compromisso de:
+│ ├─ page.jsx → Login
 
-Combater o desperdício têxtil
+│ ├─ dashboard/
 
-Sensibilizar para a moda sustentável
+│ │ ├─ layout.jsx → Layout mobile + Nav
 
-Apoiar produção artística local
+│ │ ├─ page.jsx → Catálogo
 
-Criar uma comunidade que valoriza a reutilização
+│ │ ├─ donate/
 
-Cada peça comprada e cada peça de roupa doada contribui para um ciclo mais humano e mais verde 🌱
+│ │ │ └─ page.jsx → Doar + Desconto + Mapa
 
-🧪 Como correr o projeto localmente
-1️⃣ Clonar o repositório
+│ │ ├─ cart/
+
+│ │ │ └─ page.jsx
+
+│ │ └─ artist/
+
+│ │ └─ page.jsx → Sobre o artista
+
+│ └─ api/ → Rotas (auth, produtos, carrinho)
+
+├─ components/
+
+│ ├─ ProductCard.jsx
+
+│ ├─ MapLea.jsx
+
+│ ├─ DonationsCalculator.jsx
+
+│ └─ BottomNav.jsx
+
+└─ database/
+
+└─ models (User, Product, Donation...)
+
+
+---
+
+## 👥 Equipa
+
+| Nome | Função |
+|---|---|
+Miguel | Fullstack & Gestão do Projeto |
+Mishal | Fullstack |
+Bruna | Frontend & UI |
+Rodolfo | Frontend & Design |
+Chris | Frontend |
+
+---
+
+## 🌿 Missão
+
+A ReArt ajuda a:
+
+- Combater o desperdício têxtil
+- Apoiar artistas locais
+- Estimular a economia circular
+- Criar impacto ambiental real
+
+Cada peça doada = menos resíduos  
+Cada peça comprada = apoio direto ao artista ✨
+
+---
+
+## 🧪 Como correr o projeto localmente
+
+### 1️⃣ Clonar
+```bash
 git clone <repo>
-cd reart
-
+cd reart.project
 2️⃣ Instalar dependências
+bash
+Copiar código
 npm install
+3️⃣ Criar .env.local
+Adicionar credenciais Google + MongoDB + Next-Auth Secret
 
-3️⃣ Configurar variáveis de ambiente
-
-Criar .env.local e inserir credenciais Google + MongoDB.
-
-4️⃣ Iniciar
+4️⃣ Iniciar Dev
+bash
+Copiar código
 npm run dev
-
 🌐 Deploy
+🔗 Preview em Vercel: (link aqui)
 
-🔗 Vercel Live Preview: (link aqui)
-
-🎤 Pitch rápido
-
+🎤 Pitch
 A ReArt transforma doações têxteis em arte sustentável.
-Criamos impacto social, ambiental e cultural — com moda circular como motor e tecnologia como ponte entre comunidade e artista.
+Um ecossistema onde moda, cultura e tecnologia se encontram para criar impacto social e ambiental positivo.
 
 🏁 Conclusão
+ReArt não é apenas uma app.
+É uma proposta de futuro: moda circular + arte consciente + tecnologia acessível.
 
-Este é mais do que um marketplace — é um movimento criativo para um planeta mais consciente.
-
-ReArt — onde a roupa renasce e a arte floresce.
+🌱 ReArt — onde a roupa renasce e a arte floresce.

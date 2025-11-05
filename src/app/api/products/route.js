@@ -8,27 +8,24 @@ export async function GET() {
 
         const exists = await Product.find();
 
-        // ✅ Poblar solo si vacío
         if (exists.length === 0) {
-            console.log("🌱 Populating mock products...");
-
             const fakeProducts = [
                 {
-                    title: "Camiseta Eco Verde",
+                    title: "Vestido de Plastico Reciclado",
                     price: 15,
                     image: "/mock1.jpg",
                     size: "M",
                     description: "Feita com algodão reciclado 🌿",
                 },
                 {
-                    title: "Casaco Upcycled",
+                    title: "Vestido de Latas Reutilizadas",
                     price: 40,
                     image: "/mock2.jpg",
                     size: "L",
                     description: "Materiais reaproveitados ♻️",
                 },
                 {
-                    title: "Bolsa Denim Reciclada",
+                    title: "Saia de Papel Upcycled",
                     price: 25,
                     image: "/mock3.jpg",
                     size: "Único",

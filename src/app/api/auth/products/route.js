@@ -1,29 +1,37 @@
-import { connectDB } from "@/models/connection";
-import Product from "@/models/Product";
+import { NextResponse } from "next/server";
+import Product from "@/database/models/Product";
+import { connectDB } from "@/database/connection";
 
+export async function GET() {
+    await connectDB();
 
-// Get - fetching all products 
-export async function GET() { 
-    try { 
-        await connectDB();
-        const products = await Product.find();
-        return Response.json(products, {status: 200});
-    } catch (error) {
-        console.error("GET /api/products error:", error);
-        return Response.json({ error: "Failed to fetch products"}, {status: 500});
-    }
-}
+    const fakeProducts = [
+        {
+            title: "Camiseta Eco Verde",
+            price: 15,
+            image: "/mock1.jpg",
+            size: "M",
+            description: "Feita com algodão reciclado 🌿",
+        },
+        {
+            title: "Casaco Upcycled",
+            price: 40,
+            image: "/mock2.jpg",
+            size: "L",
+            description: "Materiais reaproveitados ♻️",
+        },
+        {
+            title: "Bolsa Denim Reciclada",
+            price: 25,
+            image: "/mock3.jpg",
+            size: "Único",
+            description: "Produção artesanal ✨",
+        },
+    ];
 
-// POST - Create a new Product
-export async function POST(req) {
-    try {
-        await connectDB();
-        const body = await req.json();
+    const exists = await Product.find();
+    if (exists.length === 0) await Product.insertMany(fakeProducts);
 
-        const newProduct = await Product.create(body);
-        return Response.json(newProduct, {status:201});
-    } catch (error) {
-        console.error("POST /api/products error:", error);
-        return Response.json({ error: "Failed to create product"}, { status: 500 });
-    }
+    const products = await Product.find();
+    return NextResponse.json(products);
 }
